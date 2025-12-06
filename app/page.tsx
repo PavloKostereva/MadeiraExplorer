@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mousewheel, Parallax } from 'swiper/modules';
-import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
 import SliderContent from '@/components/SliderContent';
 import Header from '@/components/Header';
@@ -36,12 +35,12 @@ export default function Home() {
   ];
 
   return (
-    <div className="swiper slider">
-      <div className="slider-ui">
-        <div className="container header-wrapper">
+    <div className="swiper slider h-screen relative">
+      <div className="slider-ui absolute z-10 inset-0 pointer-events-none">
+        <div className="container header-wrapper h-full">
           <Header />
           <SliderContent slides={slides} activeIndex={activeIndex} />
-          <div className="header-bottom"></div>
+          <div className="header-bottom min-h-[120px]"></div>
         </div>
       </div>
 
@@ -54,7 +53,7 @@ export default function Home() {
         speed={1700}
         parallax={true}
         mousewheel={true}
-        className="slider-swiper">
+        className="slider-swiper h-full">
         {slides.map((slide) => (
           <SwiperSlide key={slide.id} className="slider__item">
             <div
