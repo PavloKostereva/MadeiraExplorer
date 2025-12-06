@@ -1,30 +1,35 @@
 'use client'
 
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
 export default function Header() {
+  const pathname = usePathname();
+
   return (
     <div className="top-line">
       <div className="row">
         <div className="col col--center">
-          {/* <a href="#" className="logo"></a> */}
+          {/* <Link href="/" className="logo"></Link> */}
         </div>
 
         <div className="col col--center col--right col--lead">
           <nav className="main-menu">
             <ul>
-              <li>
-                <a href="#">Main</a>
+              <li className={pathname === '/' ? 'active' : ''}>
+                <Link href="/">Main</Link>
               </li>
-              <li className="active">
-                <span>Info</span>
+              <li className={pathname === '/info' ? 'active' : ''}>
+                {pathname === '/info' ? <span>Info</span> : <Link href="/info">Info</Link>}
               </li>
-              <li>
-                <a href="#">Contact</a>
+              <li className={pathname === '/contact' ? 'active' : ''}>
+                <Link href="/contact">Contact</Link>
               </li>
             </ul>
           </nav>
-          <a href="#" className="button button--top">
+          <Link href="/plant-now" className="button button--top">
             Plant now
-          </a>
+          </Link>
         </div>
 
         <div className="col col--center">
@@ -34,5 +39,5 @@ export default function Header() {
         </div>
       </div>
     </div>
-  )
+  );
 }
