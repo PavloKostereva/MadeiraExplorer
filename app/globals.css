@@ -158,6 +158,17 @@
     transition: opacity ease-in-out, top ease-in-out;
   }
 
+  /* Ensure other headings don't inherit letter animation styles */
+  h2:not(.letters):not(.letters *),
+  h3:not(.letters):not(.letters *) {
+    position: static !important;
+    margin-left: 0 !important;
+    right: auto !important;
+    top: auto !important;
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
+
   .header-content__slide.active .letter {
     @apply opacity-100;
     top: 0;
@@ -358,7 +369,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-top: 2em;
+    padding-top: 0;
   }
 
   .page-content {
@@ -474,11 +485,67 @@
   .page-text h2 {
     font-size: calc(var(--index) * 3);
     @apply font-bold mt-8 mb-4 text-white;
+    line-height: 1.2;
+    word-wrap: break-word;
+    position: static !important;
+    margin-left: 0 !important;
+    right: auto !important;
+    top: auto !important;
   }
 
   .page-text h3 {
     font-size: calc(var(--index) * 2);
     @apply font-semibold mt-6 mb-3 text-white;
+    line-height: 1.3;
+    word-wrap: break-word;
+    position: static !important;
+    margin-left: 0 !important;
+    right: auto !important;
+    top: auto !important;
+  }
+
+  /* Section text headings */
+  .section-text h2 {
+    font-size: calc(var(--index) * 3);
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1em;
+    color: var(--white-color);
+    line-height: 1.2;
+    word-wrap: break-word;
+    position: static !important;
+    margin-left: 0 !important;
+    right: auto !important;
+    top: auto !important;
+  }
+
+  .section-text h3 {
+    font-size: calc(var(--index) * 2);
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    color: var(--white-color);
+    line-height: 1.3;
+    word-wrap: break-word;
+    position: static !important;
+    margin-left: 0 !important;
+    right: auto !important;
+    top: auto !important;
+  }
+
+  /* Activities section heading */
+  .activities-section h2 {
+    font-size: calc(var(--index) * 3);
+    font-weight: 700;
+    margin-bottom: 1em;
+    color: var(--white-color);
+    line-height: 1.2;
+    word-wrap: break-word;
+    position: static !important;
+    margin-left: 0 !important;
+    right: auto !important;
+    top: auto !important;
+    text-align: center;
   }
 
   .page-text p {
@@ -539,6 +606,12 @@
   .activity-card h3 {
     @apply text-green mt-0;
     font-size: calc(var(--index) * 2);
+    line-height: 1.2;
+    word-wrap: break-word;
+    position: static;
+    margin-left: 0;
+    right: auto;
+    top: auto;
   }
 
   /* Feature list */
@@ -742,6 +815,12 @@
     margin-top: 0;
     margin-bottom: 1em;
     color: var(--white-color);
+    line-height: 1.2;
+    word-wrap: break-word;
+    position: static !important;
+    margin-left: 0 !important;
+    right: auto !important;
+    top: auto !important;
   }
 
   .form-group {
