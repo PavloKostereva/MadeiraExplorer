@@ -9,9 +9,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <head>
         <link rel="stylesheet" href="/libs/swiper/swiper-bundle.min.css" />
+      </head>
+      <body suppressHydrationWarning>
         {children}
         <Script src="/libs/btn/anim-menu-btn.min.js" strategy="lazyOnload" />
       </body>
