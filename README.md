@@ -1,41 +1,31 @@
-# Madeira Explorer - Next.js
+# Madeira Explorer
 
-This is a Next.js version of the Madeira Explorer website, converted from the original HTML/CSS/JS implementation.
+A Next.js application for exploring Madeira Island.
 
 ## Getting Started
 
-First, install the dependencies:
+First, run the development server:
 
 ```bash
 npm install
-# or
-yarn install
-# or
-pnpm install
-```
-
-Then, run the development server:
-
-```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Features
+## Build
 
-- Vertical Swiper slider with parallax effects
-- Animated letter effects
-- Responsive design
-- Smooth transitions
+```bash
+npm run build
+npm start
+```
 
-## Project Structure
+## Deploy
 
-- `app/` - Next.js app directory with pages and layout
-- `components/` - React components
-- `public/` - Static assets (fonts, images, libs)
+The project is ready to deploy on Vercel. Simply push to your repository and Vercel will automatically deploy.
 
+For manual deployment:
+
+```bash
+vercel
+```
